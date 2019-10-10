@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "utilitaires_tableaux.h"
+
+void echangerCases(int *tab, int i, int j) {
+    int temp = tab[i];
+    tab[i] = tab[j];
+    tab[j] = temp;
+}
+
+void tri_minimum(int *tab, int l) {
+    int i = 0;
+    //L'élément k permet de se situer dans le tableau après chaque tri effectué
+    int k = 0;
+    while (i < l) {
+        for (i = k; i < l; i++) {
+            if (tab[k] > tab[i]) echangerCases(tab, k, i);
+        }
+        k++;
+        i = k;
+    }
+}
+
+void tri_a_bulle(int *tab, int l) {
+    int i = 0;
+    int k = 1;
+    while (k < l) {
+        for (i = 0; i < (l - k); i++) {
+            if (tab[i] > tab[i+1]) echangerCases(tab, i, i+1);
+        }
+        k++;
+    }
+}
+
+void quicksort(int *tab, int l) {
+    
+}
