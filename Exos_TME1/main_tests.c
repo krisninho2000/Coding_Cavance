@@ -20,12 +20,22 @@ int main() {
 
   afficher_tab(tab, 15);
 
+
+
+
+
   //Partie de création via lecture d'un tableau pour 10 valeurs
+
   int n2 = 10;
   int *na = &n2;
   int *tab2 = lire_tableau("10_valeurs.txt", na);
 
   afficher_tab(tab2, 10);
+
+
+
+
+
 
   //Partie de création d'un tableau puis écriture dans un fichier pour 100 valeurs
 
@@ -40,6 +50,28 @@ int main() {
   afficher_tab(tab3, n3);
 
   ecrire_tableau("100_valeurs.txt", tab3, 100);
+
+
+
+
+
+//Partie de création d'un tableau puis écriture dans un fichier pour 1000 valeurs
+
+  int n4 = 1000;
+  int *tab4 = nouveau_tableau(n4);
+  int k2;
+
+  for (k2 = 0; k2 < n4; k2++) {
+    tab4[k2] = rand()%10000;
+  }
+
+  //afficher_tab(tab4, n4);
+
+  ecrire_tableau("1000_valeurs.txt", tab4, 100);
+
+
+
+
 
   //Partie de tri des tableaux
 

@@ -17,9 +17,9 @@ int main(int argc, char **argv)
 	for(i=0;i<argc;i++)
 		printf("Argument %d : %s\n", i, argv[i]);
 
-	/*A compiler tel quel puis a modifier*/
+	/*A compiler avec ./sort <entry filename> <exit filename> */
 
-	int n = 100;
+	int n = 1000;
 	int *pn = &n;
 	int *tableau = lire_tableau(argv[1], pn);
 	tri_a_bulle(tableau, n);

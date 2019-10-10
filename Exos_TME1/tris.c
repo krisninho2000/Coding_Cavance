@@ -25,6 +25,7 @@ void tri_minimum(int *tab, int l) {
 void tri_a_bulle(int *tab, int l) {
     int i = 0;
     int k = 1;
+    //L'élément k permet de connaitre le nombre de cases déja arrangées à la fin
     while (k < l) {
         for (i = 0; i < (l - k); i++) {
             if (tab[i] > tab[i+1]) echangerCases(tab, i, i+1);
