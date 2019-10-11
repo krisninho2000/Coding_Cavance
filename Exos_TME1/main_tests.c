@@ -73,7 +73,7 @@ int main() {
 
 
 
-  //Partie de tri des tableaux
+  //Partie de tri des tableaux avec le tri a bulle et le tri minimum
 
   int tableau[] = {5,4,3,2,1};
   int tableauSize = sizeof (tableau) / sizeof (tableau[0]);
@@ -81,6 +81,15 @@ int main() {
   afficher_tab(tableau, tableauSize);
   tri_a_bulle(tableau, tableauSize);
   afficher_tab(tableau, tableauSize);
+
+  //Partie de tri des tableaux avec le quicksort (tri rapide)
+
+  int *tableau2 = nouveau_tableau(9);
+  int p;
+  for (p = 0; p < 9; p++) tableau2[p] = rand()%10;
+  afficher_tab(tableau2, 9);
+  quicksort(tableau2, 0, 8);
+  afficher_tab(tableau2, 9);
 
   return 0;
 }

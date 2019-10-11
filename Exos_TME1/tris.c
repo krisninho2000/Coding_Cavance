@@ -34,6 +34,25 @@ void tri_a_bulle(int *tab, int l) {
     }
 }
 
-void quicksort(int *tab, int l) {
-    
+void quicksort(int *tab, int first, int last) {
+    if (first < last) {
+
+        int pivot = first;
+        int i = first;
+        int j = last;
+
+        while (i < j) {
+            while ((tab[i] <= tab[pivot]) && (i < j)) i++;
+            while (tab[j] > tab[pivot]) j--;
+
+            if (i < j) {
+                echangerCases(tab, i, j);
+            }
+        }
+
+        echangerCases(tab, pivot, j);
+
+        quicksort(tab,first,j-1);
+        quicksort(tab,j+1,last);
+    }
 }
