@@ -82,13 +82,19 @@ unsigned int compte_animal_it(Animal *la) {
 
 //Fixer la fonction, probleme de positionnement (modulo cassé)
 void bouger_animaux(Animal *la) {
-  printf("Mouvement : %d et %d\n\n",la->dir[0],la->dir[1]);
+
+  /*printf("Mouvement : %d et %d\n\n",la->dir[0],la->dir[1]);
+  */
+
   la->x = (la->x + la->dir[0]);
   la->y = (la->y + la->dir[1]);
   la->x = (la->x) % SIZE_X;
   la->y = (la->y) % SIZE_Y;
-  printf("Poisition : %d et %d\n\n",la->x,la->y);
+
+  /*printf("Poisition : %d et %d\n\n",la->x,la->y);
   printf("Verification du x : %d\n\n",la->x = (la->x) % SIZE_X);
+  */
+
   la->energie = (la->energie - abs(la->dir[0]) - abs(la->dir[1]));
   if ((float)rand()/(float)(RAND_MAX/1.0) < p_ch_dir) {
     la->dir[0] = rand()%3 - 1;
