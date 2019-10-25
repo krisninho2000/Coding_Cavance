@@ -41,7 +41,7 @@ int main(void) {
 
 	/* Ecrire     usleep(T_WAIT); pour ralentir l'affichage*/
 
-  for (n = 0; n < g; n++){
+  for (n = 0; n < 1000; n++){
     afficher_ecosys(liste_proie, liste_predateur);
     rafraichir_proies(&liste_proie);
     reproduce(&liste_proie);

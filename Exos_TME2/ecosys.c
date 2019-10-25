@@ -109,6 +109,7 @@ void reproduce(Animal **liste_animal) {
   Animal *ani = *liste_animal;
   while (ani) {
     if ((float)rand()/(float)(RAND_MAX/1.0) < p_reproduce) {
+      printf("Un animal est né.\n\n");
       ajouter_animal(rand()%SIZE_X, rand()%SIZE_Y, liste_animal);
     }
     ani = ani->suivant;
@@ -121,12 +122,14 @@ void rafraichir_proies(Animal **liste_proie) {
 
   while (ani) {
     bouger_animaux(ani);
-    if (ani->energie == 0.0) {
+    if (ani->energie <= 0.0) {
+      printf("L'animal est mort\n\n");
       Animal *temp = ani;
       ani = ani->suivant;
       enlever_animal(liste_proie, temp);
     }
-    ani = ani->suivant;
+    else
+      ani = ani->suivant;
   }
 
   reproduce(liste_proie);

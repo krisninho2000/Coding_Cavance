@@ -35,7 +35,7 @@ int main(void) {
     ajouter_animal(rand()%SIZE_X ,rand()%SIZE_Y, &liste_predateur);
   }
 
-  int g = 5;
+  int g = 51;
 
   afficher_ecosys(liste_proie, liste_predateur);
 
