@@ -80,7 +80,6 @@ unsigned int compte_animal_it(Animal *la) {
 }
 
 
-//Fixer la fonction, probleme de positionnement (modulo cassé)
 void bouger_animaux(Animal *la) {
 
   /*printf("Mouvement : %d et %d\n\n",la->dir[0],la->dir[1]);
@@ -110,7 +109,7 @@ void reproduce(Animal **liste_animal) {
   Animal *ani = *liste_animal;
   while (ani) {
     if ((float)rand()/(float)(RAND_MAX/1.0) < p_reproduce) {
-      ajouter_animal(rand()%10, rand()%10, liste_animal);
+      ajouter_animal(rand()%SIZE_X, rand()%SIZE_Y, liste_animal);
     }
     ani = ani->suivant;
   }

@@ -28,7 +28,7 @@ int main(void) {
   int n = 0;
 
   for (n = 0; n < nb_proies; n++) {
-    ajouter_animal(rand()%10, rand()%10, &liste_proie);
+    ajouter_animal(rand()%SIZE_X, rand()%SIZE_Y, &liste_proie);
   }
 
   for (n = 0; n < nb_predateurs; n++) {
