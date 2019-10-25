@@ -88,6 +88,8 @@ void bouger_animaux(Animal *la) {
 
   la->x = (la->x + la->dir[0]);
   la->y = (la->y + la->dir[1]);
+  if (la->x < 0) la->x = la->x + SIZE_X;
+  if (la->y < 0) la->y = la->y + SIZE_Y;
   la->x = (la->x) % SIZE_X;
   la->y = (la->y) % SIZE_Y;
 
@@ -96,7 +98,8 @@ void bouger_animaux(Animal *la) {
   */
 
   la->energie = (la->energie - abs(la->dir[0]) - abs(la->dir[1]));
-  if ((float)rand()/(float)(RAND_MAX/1.0) < p_ch_dir) {
+
+  if (((float)rand() / (float)(RAND_MAX/1.0)) < p_ch_dir) {
     la->dir[0] = rand()%3 - 1;
     la->dir[1] = rand()%3 - 1;
   }
@@ -137,7 +140,7 @@ Animal *animal_en_XY(Animal *l, int x, int y) {
 
 
 void rafraichir_predateurs(Animal **liste_predateur, Animal **liste_proie) {
-   /* A COMPLETER */
+  /* A COMPLETER */
   /* deplacement et mise a jour de l'energie */
   /* gestion de la reproduction */
 }

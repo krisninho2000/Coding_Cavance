@@ -37,11 +37,12 @@ int main(void) {
 
   int g = 5;
 
-afficher_ecosys(liste_proie, liste_predateur);
+  afficher_ecosys(liste_proie, liste_predateur);
 
-  for (n = 0; n < g-1; n++) {
+  for (n = 0; n < g; n++) {
     rafraichir_proies(&liste_proie);
     afficher_ecosys(liste_proie,liste_predateur);
+    printf("\n\n");
   }
 
   return 0;
