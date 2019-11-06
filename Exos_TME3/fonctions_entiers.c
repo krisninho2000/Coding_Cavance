@@ -25,7 +25,7 @@ void detruire_int(void *data) {
 
 void afficher_int(const void *data) {
   int *idata=(int *)data;
-  printf("%d",*idata);
+  printf("%d\n",*idata);
 }
 
 int comparer_int(const void *a, const void *b) {
@@ -36,12 +36,12 @@ int comparer_int(const void *a, const void *b) {
 
 int ecrire_int(const void *data, FILE *f) {
   const int *idata=(const int *)data;
-  return fprintf(f, "%d", *idata);
+  return fprintf(f, "%d\n", *idata);
 }
 
-void * lire_int(FILE *f) {
+void *lire_int(FILE *f) {
   int i;
-  int r=fscanf(f," %d",&i);
+  int r = fscanf(f,"%d",&i);
   if (r<1) return NULL;
   int *pi=(int *)malloc(sizeof(int));
   *pi=i;

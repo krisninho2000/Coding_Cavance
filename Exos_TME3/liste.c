@@ -3,7 +3,6 @@
 #include "liste.h"
 #include "devel.h"
 
-
 void inserer_debut(PListe pliste, void *data) {
   PElement newe=malloc(sizeof(Element));
   if (newe==NULL) {
@@ -66,12 +65,6 @@ void inserer_place(PListe pliste, void *data){
   }
   return;
 }
-
-
-
-
-
-
 
 
 PElement chercher_liste(PListe pliste, void *data) {
