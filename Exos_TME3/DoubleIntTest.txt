@@ -1,0 +1,61 @@
+/*
+
+  // Création des instances de Double_int
+
+  Double_int *d1 = (Double_int *)malloc(sizeof(Double_int));
+  Double_int v1;
+  v1.a = 5;
+  v1.b = 5;
+  *d1 = v1;
+
+  Double_int *d2 = dupliquer_2int(d1);
+
+  Double_int *d3 = (Double_int *)malloc(sizeof(Double_int));
+  copier_2int(d1, d3);
+
+  Double_int *d4 = (Double_int *)malloc(sizeof(Double_int));
+  Double_int v4;
+  v4.a = 30;
+  v4.b = 30;
+  *d4 = v4;
+
+  // Affichage des Double_int
+
+  printf("\n");
+  afficher_2int(d1);
+  afficher_2int(d2);
+  afficher_2int(d3);
+  afficher_2int(d4);
+
+  // Comparaison de Double_int
+
+  printf("\n");
+  printf("%d\n",comparer_2int(d1,d2));
+  printf("%d\n",comparer_2int(d1,d4));
+
+  // Ecriture dans des fichiers
+
+  FILE *docw;
+  docw = fopen("ecriture_DI.txt", "w+");
+  int edi = ecrire_2int(d4, docw);
+  fclose(docw);
+
+  // Lecture de fichiers
+
+  FILE *docr;
+  docr = fopen("ecriture_DI.txt", "r+");
+  Double_int *d5 = lire_2int(docr);
+  printf("\n");
+  afficher_2int(d5);
+  fclose(docr);
+
+  // Suppression des Double_int
+
+  printf("\n");
+  detruire_2int(d1);
+  detruire_2int(d2);
+  detruire_2int(d3);
+
+  printf("\n");
+  
+  */

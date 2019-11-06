@@ -20,8 +20,7 @@ void copier_str(const void *src, void *dst) {
 }
 
 void detruire_str(void *data) {
-  char *word = data;
-  free(word);
+  free(data);
 }
 
 void afficher_str(const void *data) {
@@ -43,7 +42,7 @@ int ecrire_str(const void *data, FILE *f) {
 void *lire_str(FILE *f) {
   char copy[100];
 
-  char r = fscanf(f, "%s\0", copy);
+  char r = fscanf(f, "%s", copy);
   if (r < 1) return NULL;
 
   char *pi = (char *)malloc(100 * sizeof(char));
