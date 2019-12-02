@@ -11,6 +11,14 @@ int EvaluerPlateau_0(int plateau[H][H])
 	return res;
 	}
 
+int EvaluerPlateau_1(int plateau[H][H])
+	{
+	int i,j;
+	int res =0;
+	/*A Completer*/
+	return res;
+	}
+
 NdMiMa_t *Construire_arbre(int plateau[H][H], int prof, int couleurQuiJoue)
 	{
 	/*A Completer*/
@@ -20,7 +28,7 @@ NdMiMa_t *Construire_arbre(int plateau[H][H], int prof, int couleurQuiJoue)
 int MinMax(NdMiMa_t *arbre, int plateau[H][H], int (*EvaluerPlateau)(int plateau[H][H]))
 	{
 	/*A Completer*/
-	int min 0;
+	int min = 0;
 	return min;
 	}
 

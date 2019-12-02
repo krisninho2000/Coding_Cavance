@@ -150,6 +150,10 @@ int main(int argc, char **argv)
 					}
  			/*Joueur automatique*/
 				else
+				{
+					/* code */
+				}
+				
 					{
 					sleep(1);
 					NdMiMa_t *arbreMiMa = Construire_arbre(plateau, Niveau[joueurCourant -1], joueurCourant);

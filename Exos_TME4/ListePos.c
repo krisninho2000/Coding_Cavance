@@ -48,8 +48,11 @@ PosJouable_t *Detruire_liste(PosJouable_t *liste_pos)
 	return NULL;
 	}
 
-int Est_dans_liste(PosJouable_t *liste_pos, int i, int j)
-	{
-	/*A completer */
-	return 0;
+int Est_dans_liste(PosJouable_t *liste_pos, int i, int j) {
+	PosJouable_t *pos = liste_pos;
+	while (pos) {
+		if ((pos->i == i) && (pos->j == j)) return 1;
+		else pos = pos->suiv;
 	}
+	return 0;
+}

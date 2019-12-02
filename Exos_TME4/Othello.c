@@ -89,12 +89,21 @@ int Partie_terminee(int plateau[H][H])
 	}
 
 //Renvoie la liste des position jouables
-PosJouable_t *Trouver_liste_pos_jouables(int plateau[H][H], int couleurQuiJoue)
-	{
+PosJouable_t *Trouver_liste_pos_jouables(int plateau[H][H], int couleurQuiJoue) {
+	
 	PosJouable_t *listePos=NULL;
-	/*A completer*/
-	return listePos;
+	int i, j;
+	for (i = 0; i < H; i++) {
+		for (j = 0; j < H; j++) {
+			if (plateau[i][j] == VIDE) {
+				if (Est_jouable_gain(plateau, i, j, couleurQuiJoue)) {
+					listePos = Inserer(listePos, i, j);
+				}
+			}
+		}
 	}
+	return listePos;
+}
 
 //Retourner les pions dans une direction donnee
 
