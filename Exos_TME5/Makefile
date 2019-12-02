@@ -1,4 +1,4 @@
-S3DIR="../../S3/Solution"
+S3DIR="/Users/almehdi/Desktop/UPMC/L2 INFO/Semestre 1/C avancé/Coding_Cavance/Exos_TME3"
 GCC_FLAGS=-Wall -g -I $(S3DIR)
 LINK_FLAGS=-L $(S3DIR)
 CC=gcc
