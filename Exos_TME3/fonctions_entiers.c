@@ -25,7 +25,7 @@ void detruire_int(void *data) {
 
 void afficher_int(const void *data) {
   int *idata=(int *)data;
-  printf("%d\n",*idata);
+  printf("%d",*idata);
 }
 
 int comparer_int(const void *a, const void *b) {

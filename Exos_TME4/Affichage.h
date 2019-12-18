@@ -1,5 +1,6 @@
 #ifndef AFFICHAGE
 #define AFFICHAGE
+
 #include  "Othello.h"
 
 void Afficher_plateau_text(int plateau[H][H]);

@@ -8,8 +8,21 @@
 #include "ListePos.h"
 #include "ArbreMiMa.h"
 
-int main(int argc, char **argv)
-  {
+void print_usage() {
+		fprintf(stderr, "Usage: Othello Mode ...\n Mode :");
+		fprintf(stderr, "\t0 -> 2 joueurs: ");
+		fprintf(stderr, "Othello 0\n");
+		fprintf(stderr, "\t1 -> 1 joueur auto: ");
+		fprintf(stderr, "Othello 1 Niveau_blanc\n");
+		fprintf(stderr, "\t2 -> 2 joueurs auto: ");
+		fprintf(stderr, "Othello 2 Niveau_noir Niveau_blanc\n");
+		fprintf(stderr, "\t3 -> 1 joueurs contre distant: ");
+		fprintf(stderr, "Othello 3 Couleur_Locale Fichier_Local Fichier_Distant\n");
+		fprintf(stderr, "\t4 -> 1 joueurs auto contre distant: ");
+		fprintf(stderr, "Othello 4 Couleur_Locale Fichier_Local Fichier_Distant Niveau_Local\n");
+}
+
+int main(int argc, char **argv) {
   int plateau[H][H];
   int Mode;
   char *ModeStr[] = {"2 joueurs",
@@ -27,26 +40,10 @@ int main(int argc, char **argv)
   int Niveau[2];
   int (*EvaluerPlateau[])(int plateau[H][H]) = {EvaluerPlateau_1, EvaluerPlateau_1};
 
-	void print_usage()
-		{
-		fprintf(stderr, "Usage: Othello Mode ...\n Mode :");
-		fprintf(stderr, "\t0 -> 2 joueurs: ");
-		fprintf(stderr, "Othello 0\n");
-		fprintf(stderr, "\t1 -> 1 joueur auto: ");
-		fprintf(stderr, "Othello 1 Niveau_blanc\n");
-		fprintf(stderr, "\t2 -> 2 joueurs auto: ");
-		fprintf(stderr, "Othello 2 Niveau_noir Niveau_blanc\n");
-		fprintf(stderr, "\t3 -> 1 joueurs contre distant: ");
-		fprintf(stderr, "Othello 3 Couleur_Locale Fichier_Local Fichier_Distant\n");
-		fprintf(stderr, "\t4 -> 1 joueurs auto contre distant: ");
-		fprintf(stderr, "Othello 4 Couleur_Locale Fichier_Local Fichier_Distant Niveau_Local\n");
-		}
-
-	if (argc < 2)
-		{
+	if (argc < 2) {
 		print_usage();
 		return 1;
-		}
+	}
 
 	Mode = atoi(argv[1]);
 
@@ -198,10 +195,8 @@ int main(int argc, char **argv)
     printf("Les noirs ont gagne par %d contre %d\n", NbN, NbB);
   else
     {
-    if (NbN == NbB)
-      printf("Ex-aequo par %d contre %d\n", NbN, NbB);
-    else
-      printf("Les blancs ont gagne par %d contre %d\n", NbB, NbN);
+    if (NbN == NbB) printf("Ex-aequo par %d contre %d\n", NbN, NbB);
+    else printf("Les blancs ont gagne par %d contre %d\n", NbB, NbN);
     }
 
 	Loop_until_play(plateau, &i, &j, joueurCourant);

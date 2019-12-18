@@ -5,7 +5,7 @@
 #include "Othello.h"
 #include "Affichage.h"
 
-#include <SDL.h>
+#include <SDL2/SDL.h>
 
 #define CASE_SIZE 64
 

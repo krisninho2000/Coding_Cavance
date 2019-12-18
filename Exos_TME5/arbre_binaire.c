@@ -60,11 +60,11 @@ void detruire_ab(PArbreBinaire pab) {
 
 void afficher_ab_prefixe_rec(PNoeudBinaire pnb, PArbreBinaire pab) {
   if (pnb) {
-    printf("( ");
+    printf(" ( ");
     pab->afficher(pnb->data);
     afficher_ab_prefixe_rec(pnb->gauche,pab);
     afficher_ab_prefixe_rec(pnb->droit,pab);
-    printf(") ");
+    printf(" ) ");
   }
 }
   
@@ -74,11 +74,11 @@ void afficher_ab_prefixe(PArbreBinaire pab) {
 
 void afficher_ab_infixe_rec(PNoeudBinaire pnb, PArbreBinaire pab) {
   if (pnb) {
-    printf("( ");
+    printf(" ( ");
     afficher_ab_infixe_rec(pnb->gauche,pab);
     pab->afficher(pnb->data);
     afficher_ab_infixe_rec(pnb->droit,pab);
-    printf(") ");
+    printf(" ) ");
   }
 }
   
@@ -88,11 +88,11 @@ void afficher_ab_infixe(PArbreBinaire pab) {
 
 void afficher_ab_postfixe_rec(PNoeudBinaire pnb, PArbreBinaire pab) {
   if (pnb) {
-    printf("( ");
+    printf(" ( ");
     afficher_ab_postfixe_rec(pnb->gauche,pab);
     afficher_ab_postfixe_rec(pnb->droit,pab);
     pab->afficher(pnb->data);
-    printf(") ");
+    printf(" ) ");
   }
 }
   
@@ -215,7 +215,7 @@ void ecrire_ab_rec(PNoeudBinaire pnb, PArbreBinaire pab, FILE *f) {
 }
 
 void ecrire_ab(PArbreBinaire pab, const char *nom_fichier) {
-  FILE *f=fopen(nom_fichier,"w");
+  FILE *f=fopen(nom_fichier,"w+");
   if (f==NULL) {
     printf("Probleme lors de l'ouverture du fichier.\n");
     return;

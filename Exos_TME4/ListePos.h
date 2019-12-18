@@ -17,5 +17,4 @@ int Est_dans_liste(PosJouable_t *liste_pos, int i, int j);
 
 //int len(cellule_t* liste);
 
-
 #endif
